@@ -1,0 +1,6 @@
+framework module FieryCrucible {
+  umbrella header "FieryCrucible-umbrella.h"
+
+  export *
+  module * { export * }
+}

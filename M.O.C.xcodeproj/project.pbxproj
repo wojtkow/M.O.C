@@ -13,6 +13,7 @@
 		402FD5E1228DF20200CD7A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402FD5E0228DF20200CD7A7A /* Assets.xcassets */; };
 		402FD5E4228DF20200CD7A7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402FD5E2228DF20200CD7A7A /* LaunchScreen.storyboard */; };
 		402FD5EF228DF20200CD7A7A /* M_O_CTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FD5EE228DF20200CD7A7A /* M_O_CTests.swift */; };
+		402FD5FA228DF51D00CD7A7A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 402FD5F9228DF51D00CD7A7A /* README.md */; };
 		63007E0EA2C0FBF63345DDF6 /* Pods_M_O_C.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8784C01D22BAC1ECE29C553E /* Pods_M_O_C.framework */; };
 		90BEF08DCFFAEC0AD8F72616 /* Pods_M_O_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5CA2F172DE5D849A38DFDD0 /* Pods_M_O_CTests.framework */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		402FD5EA228DF20200CD7A7A /* M.O.CTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M.O.CTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		402FD5EE228DF20200CD7A7A /* M_O_CTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M_O_CTests.swift; sourceTree = "<group>"; };
 		402FD5F0228DF20200CD7A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		402FD5F9228DF51D00CD7A7A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		74FBC2508C4FDEB5F6157CF8 /* Pods-M.O.C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.O.C.debug.xcconfig"; path = "Pods/Target Support Files/Pods-M.O.C/Pods-M.O.C.debug.xcconfig"; sourceTree = "<group>"; };
 		774373B9C623858B98D375FC /* Pods-M.O.CTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.O.CTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-M.O.CTests/Pods-M.O.CTests.release.xcconfig"; sourceTree = "<group>"; };
 		8784C01D22BAC1ECE29C553E /* Pods_M_O_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_O_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 		402FD5CD228DF20200CD7A7A = {
 			isa = PBXGroup;
 			children = (
+				402FD5F9228DF51D00CD7A7A /* README.md */,
 				402FD5D8228DF20200CD7A7A /* M.O.C */,
 				402FD5ED228DF20200CD7A7A /* M.O.CTests */,
 				402FD5D7228DF20200CD7A7A /* Products */,
@@ -215,6 +218,7 @@
 			files = (
 				402FD5E4228DF20200CD7A7A /* LaunchScreen.storyboard in Resources */,
 				402FD5E1228DF20200CD7A7A /* Assets.xcassets in Resources */,
+				402FD5FA228DF51D00CD7A7A /* README.md in Resources */,
 				402FD5DF228DF20200CD7A7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

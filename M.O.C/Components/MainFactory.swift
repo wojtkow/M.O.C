@@ -37,6 +37,22 @@ class MainFactory : DependencyFactory {
 	}
 	
 	//MARK: - View Controllers
+	func mapViewController() -> MapViewController {		
+		return scoped(MapViewController(), configure: nil)
+	}
 	
+	//MARK: - Flow Controllers
+	
+	func mainFlowController() -> MainFlowController {
+		return shared(
+			factory: {
+				let instance = MainFlowController(withDependencyFactory: self)
+				return instance
+		},
+			configure: { instance in
+				instance.navigationController = self.rootViewController()
+		}
+		)
+	}
 }
 

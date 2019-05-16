@@ -17,7 +17,7 @@ class MOCRootNavigationController: UINavigationController {
 	init(withDependencyFactory dependencyFactory: MainFactory) {
 		self.mainFactory = dependencyFactory
 		super.init(nibName: nil, bundle: nil)
-		self.viewControllers = [mainFactory.dashboardViewController()]
+		self.viewControllers = [mainFactory.mapViewController()]
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

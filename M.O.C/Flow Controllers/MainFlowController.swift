@@ -15,11 +15,11 @@ class MainFlowController: NSObject {
 		didSet {
 			topViewController = (navigationController.topViewController as! MapViewController)
 			
-			setupLoginFlow()
+//			setupLoginFlow()
 		}
 	}
 	
-	var topViewController: DashboardViewController!
+	var topViewController: MapViewController!
 	private var mainFactory: MainFactory
 	
 	init(withDependencyFactory dependencyFactory: MainFactory) {

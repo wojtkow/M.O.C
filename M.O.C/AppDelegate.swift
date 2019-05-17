@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var mainFactory: MainFactory!
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+		GMSServices.provideAPIKey(AccessKeys.googleMaps.rawValue)
+		
 		mainFactory = MainFactory()
 		self.window = mainFactory.mainWindow()
 		

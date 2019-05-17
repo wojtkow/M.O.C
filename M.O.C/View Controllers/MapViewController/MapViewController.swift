@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class MapViewController: UIViewController {
 
+	@IBOutlet weak var mapView: GMSMapView!
+	
 	//MARK: - View Controller
 	init() {
 		super.init(nibName: "MapViewController", bundle: nil)
@@ -21,6 +24,20 @@ class MapViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		mapView.settings.myLocationButton = true
+		mapView.settings.compassButton = true
+		mapView.mapType = .satellite
+		
+		mapView.delegate = self
 	}
-
+	
+	//MARK: - Actions
+	
 }
+
+
+extension MapViewController: GMSMapViewDelegate {
+	
+}
+

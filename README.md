@@ -1,3 +1,4 @@
+[![Swift 5.0](https://img.shields.io/badge/swift-5.0-blue.svg?style=flat)](https://developer.apple.com/swift)
 # M.O.C
  __M.O.C - My Open Caching client written in Swift__ 
 

@@ -21,6 +21,7 @@
 		402FD648229060CA00CD7A7A /* OpenCachingApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FD647229060CA00CD7A7A /* OpenCachingApiManager.swift */; };
 		402FD64B2290618D00CD7A7A /* Geocache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FD64A2290618D00CD7A7A /* Geocache.swift */; };
 		402FD64D2290639800CD7A7A /* OpenCachingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FD64C2290639800CD7A7A /* OpenCachingRouter.swift */; };
+		402FD65022906F7100CD7A7A /* JSONDecoder+MOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FD64F22906F7100CD7A7A /* JSONDecoder+MOC.swift */; };
 		63007E0EA2C0FBF63345DDF6 /* Pods_M_O_C.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8784C01D22BAC1ECE29C553E /* Pods_M_O_C.framework */; };
 		90BEF08DCFFAEC0AD8F72616 /* Pods_M_O_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5CA2F172DE5D849A38DFDD0 /* Pods_M_O_CTests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		402FD647229060CA00CD7A7A /* OpenCachingApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCachingApiManager.swift; sourceTree = "<group>"; };
 		402FD64A2290618D00CD7A7A /* Geocache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocache.swift; sourceTree = "<group>"; };
 		402FD64C2290639800CD7A7A /* OpenCachingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCachingRouter.swift; sourceTree = "<group>"; };
+		402FD64F22906F7100CD7A7A /* JSONDecoder+MOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+MOC.swift"; sourceTree = "<group>"; };
 		74FBC2508C4FDEB5F6157CF8 /* Pods-M.O.C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.O.C.debug.xcconfig"; path = "Pods/Target Support Files/Pods-M.O.C/Pods-M.O.C.debug.xcconfig"; sourceTree = "<group>"; };
 		774373B9C623858B98D375FC /* Pods-M.O.CTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.O.CTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-M.O.CTests/Pods-M.O.CTests.release.xcconfig"; sourceTree = "<group>"; };
 		8784C01D22BAC1ECE29C553E /* Pods_M_O_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_O_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 				402FD64522905FE700CD7A7A /* API */,
 				402FD5FB228DF79800CD7A7A /* Components */,
 				402FD64622905FFC00CD7A7A /* Data */,
+				402FD64E22906F4000CD7A7A /* Extensions */,
 				402FD601228DF85200CD7A7A /* Flow Controllers */,
 				402FD5FE228DF7F900CD7A7A /* View Controllers */,
 				402FD5D9228DF20200CD7A7A /* AppDelegate.swift */,
@@ -186,6 +189,14 @@
 				402FD64A2290618D00CD7A7A /* Geocache.swift */,
 			);
 			path = Mappers;
+			sourceTree = "<group>";
+		};
+		402FD64E22906F4000CD7A7A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				402FD64F22906F7100CD7A7A /* JSONDecoder+MOC.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		541CE9DB5BE5109C3A35E15E /* Frameworks */ = {
@@ -419,6 +430,7 @@
 				402FD644228F132400CD7A7A /* AccessKeys.swift in Sources */,
 				402FD648229060CA00CD7A7A /* OpenCachingApiManager.swift in Sources */,
 				402FD607228DFA2300CD7A7A /* MapViewController.swift in Sources */,
+				402FD65022906F7100CD7A7A /* JSONDecoder+MOC.swift in Sources */,
 				402FD5FD228DF7B400CD7A7A /* MainFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

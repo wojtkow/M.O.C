@@ -12,6 +12,7 @@ import GoogleMaps
 class MapViewController: UIViewController {
 
 	@IBOutlet weak var mapView: GMSMapView!
+	@IBOutlet weak var mapTypeButton: UIButton!
 	
 	//MARK: - View Controller
 	init() {
@@ -30,10 +31,27 @@ class MapViewController: UIViewController {
 		mapView.mapType = .satellite
 		
 		mapView.delegate = self
+		
+		setupViewElements()
 	}
 	
 	//MARK: - Actions
+	@IBAction func changeMapeTypeAction(_ sender: Any) {
+		if mapView.mapType == .satellite {
+			mapView.mapType = .normal
+		}
+		else {
+			mapView.mapType = .satellite
+		}
+	}
 	
+	//MARK: - Private
+	private func setupViewElements() {
+		mapTypeButton.layer.cornerRadius = 24
+		mapTypeButton.layer.borderColor = UIColor.darkGray.cgColor
+		mapTypeButton.layer.borderWidth = 1.0
+		mapTypeButton.backgroundColor = .white
+	}
 }
 
 

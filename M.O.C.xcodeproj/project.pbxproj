@@ -22,6 +22,9 @@
 		402FD64B2290618D00CD7A7A /* Geocache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FD64A2290618D00CD7A7A /* Geocache.swift */; };
 		402FD64D2290639800CD7A7A /* OpenCachingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FD64C2290639800CD7A7A /* OpenCachingRouter.swift */; };
 		402FD65022906F7100CD7A7A /* JSONDecoder+MOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FD64F22906F7100CD7A7A /* JSONDecoder+MOC.swift */; };
+		402FD6572290790F00CD7A7A /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 402FD6542290790E00CD7A7A /* Font Awesome 5 Free-Regular-400.otf */; };
+		402FD6582290790F00CD7A7A /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 402FD6552290790E00CD7A7A /* Font Awesome 5 Free-Solid-900.otf */; };
+		402FD6592290790F00CD7A7A /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 402FD6562290790E00CD7A7A /* Font Awesome 5 Brands-Regular-400.otf */; };
 		63007E0EA2C0FBF63345DDF6 /* Pods_M_O_C.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8784C01D22BAC1ECE29C553E /* Pods_M_O_C.framework */; };
 		90BEF08DCFFAEC0AD8F72616 /* Pods_M_O_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5CA2F172DE5D849A38DFDD0 /* Pods_M_O_CTests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +60,9 @@
 		402FD64A2290618D00CD7A7A /* Geocache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocache.swift; sourceTree = "<group>"; };
 		402FD64C2290639800CD7A7A /* OpenCachingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCachingRouter.swift; sourceTree = "<group>"; };
 		402FD64F22906F7100CD7A7A /* JSONDecoder+MOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+MOC.swift"; sourceTree = "<group>"; };
+		402FD6542290790E00CD7A7A /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		402FD6552290790E00CD7A7A /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		402FD6562290790E00CD7A7A /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		74FBC2508C4FDEB5F6157CF8 /* Pods-M.O.C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.O.C.debug.xcconfig"; path = "Pods/Target Support Files/Pods-M.O.C/Pods-M.O.C.debug.xcconfig"; sourceTree = "<group>"; };
 		774373B9C623858B98D375FC /* Pods-M.O.CTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.O.CTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-M.O.CTests/Pods-M.O.CTests.release.xcconfig"; sourceTree = "<group>"; };
 		8784C01D22BAC1ECE29C553E /* Pods_M_O_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_O_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +124,7 @@
 				402FD5E0228DF20200CD7A7A /* Assets.xcassets */,
 				402FD5E2228DF20200CD7A7A /* LaunchScreen.storyboard */,
 				402FD5E5228DF20200CD7A7A /* Info.plist */,
+				402FD6512290759600CD7A7A /* Resourcces */,
 			);
 			path = M.O.C;
 			sourceTree = "<group>";
@@ -197,6 +204,16 @@
 				402FD64F22906F7100CD7A7A /* JSONDecoder+MOC.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		402FD6512290759600CD7A7A /* Resourcces */ = {
+			isa = PBXGroup;
+			children = (
+				402FD6562290790E00CD7A7A /* Font Awesome 5 Brands-Regular-400.otf */,
+				402FD6542290790E00CD7A7A /* Font Awesome 5 Free-Regular-400.otf */,
+				402FD6552290790E00CD7A7A /* Font Awesome 5 Free-Solid-900.otf */,
+			);
+			path = Resourcces;
 			sourceTree = "<group>";
 		};
 		541CE9DB5BE5109C3A35E15E /* Frameworks */ = {
@@ -307,7 +324,10 @@
 				402FD5E4228DF20200CD7A7A /* LaunchScreen.storyboard in Resources */,
 				402FD5E1228DF20200CD7A7A /* Assets.xcassets in Resources */,
 				402FD5FA228DF51D00CD7A7A /* README.md in Resources */,
+				402FD6582290790F00CD7A7A /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				402FD608228DFA2300CD7A7A /* MapViewController.xib in Resources */,
+				402FD6592290790F00CD7A7A /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
+				402FD6572290790F00CD7A7A /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

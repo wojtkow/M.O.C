@@ -13,6 +13,8 @@ enum OpenCachingApiError: Error {
 	case invalidCredentials
 }
 
+typealias ApiFailureHandler = ((_ error: Error) -> Void)
+
 class OpenCachingApiManager {
 
 	static let shared: OpenCachingApiManager = OpenCachingApiManager()
@@ -23,7 +25,7 @@ class OpenCachingApiManager {
 		self.sessionManager = SessionManager()
 	}
 	
-	func getGeocache(code: String, completion: @escaping ((_ geocache: Geocache?, _ error: Error?) -> Void)) {
+	func getGeocache(code: String, success: @escaping ((_ geocache: Geocache) -> Void), failure: @escaping ApiFailureHandler) {
 		let params = ["cache_code" : code,
 					  "langpref": "pl",
 					  "consumer_key": AccessKeys.okapi.rawValue]
@@ -36,21 +38,36 @@ class OpenCachingApiManager {
 				
 				switch cacheResult {
 				case .success(let cache):
-					completion(cache, nil)
+					success(cache)
 				case .failure(let error):
-					if let statusCode = response.response?.statusCode {
-						switch statusCode {
-						case 401:
-							completion(nil, OpenCachingApiError.invalidCredentials)
-						default:
-							completion(nil, error)
-						}
-					}
-					else {
-						completion(nil, error)
-					}
+					self.handle(error: error, response: response, handler: failure)
 				}
 			}
 				
+	}
+	
+	//MARK: - Private
+	private func handle(error: Error, response: DataResponse<Any>, handler: @escaping ApiFailureHandler) {
+		if let resp = response.response, resp.statusCode == 401 {
+			self.handleAuthError()
+		}
+		handler(error)
+	}
+	
+	private func handle<T: Decodable>(error: Error, response: DataResponse<T>, handler: @escaping ApiFailureHandler) {
+		self.handle(fromLogin: false, error: error, response: response, handler: handler)
+	}
+	
+	private func handle<T: Decodable>(fromLogin: Bool, error: Error, response: DataResponse<T>, handler: @escaping ApiFailureHandler) {
+		if let resp = response.response, resp.statusCode == 401 {
+			if !fromLogin {
+				self.handleAuthError()
+			}
+		}
+		handler(error)
+	}
+	
+	private func handleAuthError() {
+		//handle auth error
 	}
 }

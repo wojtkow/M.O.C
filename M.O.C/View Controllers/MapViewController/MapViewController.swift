@@ -25,6 +25,7 @@ class MapViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.title = "M.O.C"
 		
 		mapView.settings.myLocationButton = true
 		mapView.settings.compassButton = true

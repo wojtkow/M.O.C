@@ -25,6 +25,7 @@
 		402FD6572290790F00CD7A7A /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 402FD6542290790E00CD7A7A /* Font Awesome 5 Free-Regular-400.otf */; };
 		402FD6582290790F00CD7A7A /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 402FD6552290790E00CD7A7A /* Font Awesome 5 Free-Solid-900.otf */; };
 		402FD6592290790F00CD7A7A /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 402FD6562290790E00CD7A7A /* Font Awesome 5 Brands-Regular-400.otf */; };
+		4049DCEA24070C7F0039F8C8 /* OpenCachingRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4049DCE924070C7F0039F8C8 /* OpenCachingRequestAdapter.swift */; };
 		63007E0EA2C0FBF63345DDF6 /* Pods_M_O_C.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8784C01D22BAC1ECE29C553E /* Pods_M_O_C.framework */; };
 		90BEF08DCFFAEC0AD8F72616 /* Pods_M_O_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5CA2F172DE5D849A38DFDD0 /* Pods_M_O_CTests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		402FD6542290790E00CD7A7A /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		402FD6552290790E00CD7A7A /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		402FD6562290790E00CD7A7A /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
+		4049DCE924070C7F0039F8C8 /* OpenCachingRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCachingRequestAdapter.swift; sourceTree = "<group>"; };
 		74FBC2508C4FDEB5F6157CF8 /* Pods-M.O.C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.O.C.debug.xcconfig"; path = "Pods/Target Support Files/Pods-M.O.C/Pods-M.O.C.debug.xcconfig"; sourceTree = "<group>"; };
 		774373B9C623858B98D375FC /* Pods-M.O.CTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.O.CTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-M.O.CTests/Pods-M.O.CTests.release.xcconfig"; sourceTree = "<group>"; };
 		8784C01D22BAC1ECE29C553E /* Pods_M_O_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_O_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 			children = (
 				402FD647229060CA00CD7A7A /* OpenCachingApiManager.swift */,
 				402FD64C2290639800CD7A7A /* OpenCachingRouter.swift */,
+				4049DCE924070C7F0039F8C8 /* OpenCachingRequestAdapter.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				402FD64D2290639800CD7A7A /* OpenCachingRouter.swift in Sources */,
 				402FD64B2290618D00CD7A7A /* Geocache.swift in Sources */,
 				402FD600228DF81600CD7A7A /* MOCRootNavigationController.swift in Sources */,
+				4049DCEA24070C7F0039F8C8 /* OpenCachingRequestAdapter.swift in Sources */,
 				402FD644228F132400CD7A7A /* AccessKeys.swift in Sources */,
 				402FD648229060CA00CD7A7A /* OpenCachingApiManager.swift in Sources */,
 				402FD607228DFA2300CD7A7A /* MapViewController.swift in Sources */,

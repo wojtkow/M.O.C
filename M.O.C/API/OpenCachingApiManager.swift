@@ -23,12 +23,12 @@ class OpenCachingApiManager {
 	
 	private init() {
 		self.sessionManager = SessionManager()
+		self.sessionManager.adapter = OpenCachingRequestAdapter(accessToken: AccessKeys.okapi.rawValue)
 	}
 	
 	func getGeocache(code: String, success: @escaping ((_ geocache: Geocache) -> Void), failure: @escaping ApiFailureHandler) {
 		let params = ["cache_code" : code,
-					  "langpref": "pl",
-					  "consumer_key": AccessKeys.okapi.rawValue]
+					  "langpref": "pl"]
 		
 		sessionManager.request(OpenCachingRouter.getCeocache(params))
 			.validate(statusCode: 200..<300)
@@ -43,7 +43,6 @@ class OpenCachingApiManager {
 					self.handle(error: error, response: response, handler: failure)
 				}
 			}
-				
 	}
 	
 	//MARK: - Private

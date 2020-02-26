@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import CoreLocation
 
 enum OpenCachingApiError: Error {
 	case invalidCredentials
@@ -44,6 +45,28 @@ class OpenCachingApiManager {
 				}
 			}
 	}
+	
+//	func getNearestGeocaches(toPoint coordinates: CLLocationCoordinate2D, radius: Float, success: @escaping ((_ geocaches: [Geocache]) -> Void), failure: @escaping ApiFailureHandler) {
+//		let params: [String: Any] = ["center": "\(coordinates.latitude)|\(coordinates.longitude)",
+//									"radius": radius]
+//		
+//		let decoder = JSONDecoder()
+//
+//		sessionManager.request(OpenCachingRouter.getNearestGeochaches(params))
+//			.validate(statusCode: 200..<300)
+//			.responseDecodable (decoder: jsonDecoder){ (response: DataResponse<[Article]>) in
+//				
+//				let cacheResult: Result<[Geocache]> = decoder.decodeResponse(from: response)
+//				
+//				switch cacheResult {
+//				case .success(let cache):
+//					success(cache)
+//				case .failure(let error):
+//					self.handle(error: error, response: response, handler: failure)
+//				}
+//			}
+//	}
+	
 	
 	//MARK: - Private
 	private func handle(error: Error, response: DataResponse<Any>, handler: @escaping ApiFailureHandler) {

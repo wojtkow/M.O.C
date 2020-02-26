@@ -34,6 +34,7 @@ class MapViewController: UIViewController {
 		mapView.delegate = self
 		
 		setupViewElements()
+		downloadData()
 	}
 	
 	//MARK: - Actions
@@ -52,6 +53,19 @@ class MapViewController: UIViewController {
 		mapTypeButton.layer.borderColor = UIColor.darkGray.cgColor
 		mapTypeButton.layer.borderWidth = 1.0
 		mapTypeButton.backgroundColor = .white
+	}
+	
+	//temp
+	private func downloadData() {
+//		let coordinate = CLLocationCoordinate2D(latitude: 52.49, longitude: 16.18)
+//
+//		OpenCachingApiManager.shared.getNearestGeocaches(toPoint: coordinate, radius: 30, success: { (geocaches) in
+//			print("\(geocaches)")
+//		}) { (error) in
+////			if let error = error {
+//				print("\(error)")
+////			}
+//		}
 	}
 }
 

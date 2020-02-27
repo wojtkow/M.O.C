@@ -57,15 +57,15 @@ class MapViewController: UIViewController {
 	
 	//temp
 	private func downloadData() {
-//		let coordinate = CLLocationCoordinate2D(latitude: 52.49, longitude: 16.18)
-//
-//		OpenCachingApiManager.shared.getNearestGeocaches(toPoint: coordinate, radius: 30, success: { (geocaches) in
-//			print("\(geocaches)")
-//		}) { (error) in
-////			if let error = error {
-//				print("\(error)")
-////			}
-//		}
+		let coordinate = CLLocationCoordinate2D(latitude: 52.49, longitude: 16.18)
+
+		OpenCachingApiManager.shared.getNearestGeocaches(toPoint: coordinate, radius: 30, success: { (geocaches) in
+			print("\(geocaches)")
+		}) { (error) in
+//			if let error = error {
+				print("\(error)")
+//			}
+		}
 	}
 }
 

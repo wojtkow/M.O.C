@@ -27,7 +27,7 @@ enum OpenCachingRouter: URLRequestConvertible {
 			case .getCeocache:
 				relativePath = "services/caches/geocaches"
 			case .getNearestGeochaches:
-				relativePath = "services/caches/search/nearest"
+				relativePath = "services/caches/shortcuts/search_and_retrieve"
 			}
 			
 			var url = URL(string: OpenCachingRouter.baseURL)!
@@ -42,11 +42,25 @@ enum OpenCachingRouter: URLRequestConvertible {
 			}
 		}()
 		
+		var needBody: Bool {
+			switch self {
+			case .getCeocache, .getNearestGeochaches:
+				return false
+			}
+		}
+		
 		var baseRequest = URLRequest(url: url)
 		baseRequest.httpMethod = method.rawValue
 		
-		let encoding = JSONEncoding.default
-		let urlRequest = try encoding.encode(baseRequest, with: params)
-		return urlRequest
+		if needBody {
+			let encoding = JSONEncoding.default
+			let encodedRequest = try encoding.encode(baseRequest, with: params)
+			return encodedRequest
+		}
+		else {
+			let encoding = URLEncoding.queryString
+			let encodedRequest = try encoding.encode(baseRequest, with: params)
+			return encodedRequest
+		}
 	}
 }

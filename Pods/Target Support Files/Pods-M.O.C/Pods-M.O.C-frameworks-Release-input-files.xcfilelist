@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-M.O.C/Pods-M.O.C-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/FieryCrucible/FieryCrucible.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework

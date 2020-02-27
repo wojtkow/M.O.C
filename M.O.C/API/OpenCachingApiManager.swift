@@ -20,11 +20,10 @@ class OpenCachingApiManager {
 
 	static let shared: OpenCachingApiManager = OpenCachingApiManager()
 	
-	private let sessionManager: SessionManager
+	private let sessionManager: Session
 	
 	private init() {
-		self.sessionManager = SessionManager()
-		self.sessionManager.adapter = OpenCachingRequestAdapter(accessToken: AccessKeys.okapi.rawValue)
+		self.sessionManager = Session(interceptor: OpenCachingRequestInterceptor())
 	}
 	
 	func getGeocache(code: String, success: @escaping ((_ geocache: Geocache) -> Void), failure: @escaping ApiFailureHandler) {
@@ -33,11 +32,8 @@ class OpenCachingApiManager {
 		
 		sessionManager.request(OpenCachingRouter.getCeocache(params))
 			.validate(statusCode: 200..<300)
-			.responseData { (response) in
-				let decoder = JSONDecoder()
-				let cacheResult: Result<Geocache> = decoder.decodeResponse(from: response)
-				
-				switch cacheResult {
+			.responseDecodable(of: Geocache.self){ (response) in
+				switch response.result {
 				case .success(let cache):
 					success(cache)
 				case .failure(let error):
@@ -46,44 +42,48 @@ class OpenCachingApiManager {
 			}
 	}
 	
-//	func getNearestGeocaches(toPoint coordinates: CLLocationCoordinate2D, radius: Float, success: @escaping ((_ geocaches: [Geocache]) -> Void), failure: @escaping ApiFailureHandler) {
-//		let params: [String: Any] = ["center": "\(coordinates.latitude)|\(coordinates.longitude)",
-//									"radius": radius]
-//		
-//		let decoder = JSONDecoder()
-//
-//		sessionManager.request(OpenCachingRouter.getNearestGeochaches(params))
-//			.validate(statusCode: 200..<300)
-//			.responseDecodable (decoder: jsonDecoder){ (response: DataResponse<[Article]>) in
-//				
-//				let cacheResult: Result<[Geocache]> = decoder.decodeResponse(from: response)
-//				
-//				switch cacheResult {
-//				case .success(let cache):
-//					success(cache)
-//				case .failure(let error):
-//					self.handle(error: error, response: response, handler: failure)
-//				}
-//			}
-//	}
+	func getNearestGeocaches(toPoint coordinates: CLLocationCoordinate2D, radius: Float, success: @escaping ((_ geocaches: GeocachesResult) -> Void), failure: @escaping ApiFailureHandler) {
+		let params: [String: Any] = ["search_params": "{\"center\": \"\(coordinates.latitude)|\(coordinates.longitude)\", \"radius\": \(radius)}",
+			"search_method": "services/caches/search/nearest",
+			"retr_method": "services/caches/geocaches",
+			"retr_params": "{\"fields\": \"name|location|type}\"",
+			"wrap": true]
+		
+		
+		sessionManager.request(OpenCachingRouter.getNearestGeochaches(params))
+			.validate(statusCode: 200..<300)
+			.responseDecodable(of: GeocachesResult.self){ (response) in
+				switch response.result {
+				case .success(let caches):
+					success(caches)
+				case .failure(let error):
+					self.handle(error: error, response: response, handler: failure)
+				}
+			}
+	}
 	
 	
 	//MARK: - Private
-	private func handle(error: Error, response: DataResponse<Any>, handler: @escaping ApiFailureHandler) {
+	private func handle(error: Error, response: DataResponse<Any, AFError>, handler: @escaping ApiFailureHandler) {
 		if let resp = response.response, resp.statusCode == 401 {
 			self.handleAuthError()
 		}
 		handler(error)
 	}
 	
-	private func handle<T: Decodable>(error: Error, response: DataResponse<T>, handler: @escaping ApiFailureHandler) {
+	private func handle<T: Decodable>(error: Error, response: DataResponse<T, AFError>, handler: @escaping ApiFailureHandler) {
 		self.handle(fromLogin: false, error: error, response: response, handler: handler)
 	}
 	
-	private func handle<T: Decodable>(fromLogin: Bool, error: Error, response: DataResponse<T>, handler: @escaping ApiFailureHandler) {
+	private func handle<T: Decodable>(fromLogin: Bool, error: Error, response: DataResponse<T, AFError>, handler: @escaping ApiFailureHandler) {
 		if let resp = response.response, resp.statusCode == 401 {
 			if !fromLogin {
 				self.handleAuthError()
+			}
+		}
+		if let data = response.data {
+			if let str = String(data: data, encoding: .utf8) {
+				print("\(str)")
 			}
 		}
 		handler(error)
